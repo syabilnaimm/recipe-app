@@ -79,17 +79,17 @@ export default function RecipeDetailsPage() {
               <h2 className="text-lg font-bold mb-2 text-blue-900">
                 Ingredients ({details.extendedIngredients?.length ?? 0})
               </h2>
-              <ul className="list-disc pl-5 space-y-1 text-sm md:text-base text-slate-700 text-left">
+              <ol className="list-disc pl-5 space-y-1 text-sm md:text-base text-slate-700 text-left">
                 {details.extendedIngredients?.map((item) => (
                   <li key={item.id || item.name}>{item.original}</li>
                 )) || <li>Ingredient details unavailable.</li>}
-              </ul>
+              </ol>
             </aside>
 
             <div className="col-span-2">
               <h2 className="text-xl font-bold mb-3 text-blue-900 text-left">Instructions</h2>
               {details.instructions ? (
-                <div className="prose prose-blue prose-sm md:prose-base max-w-none text-left">
+                <div className="text-sm md:text-base text-slate-700 text-left [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-2">
                   <div dangerouslySetInnerHTML={{ __html: details.instructions }} />
                 </div>
               ) : (
@@ -100,7 +100,7 @@ export default function RecipeDetailsPage() {
 
           {details.summary && (
             <section className="mb-8 p-4 rounded-xl border border-blue-100 bg-blue-50">
-              <h2 className="text-lg font-bold mb-2">What this dish is</h2>
+              <h2 className="text-lg font-bold mb-2 text-blue-900">Description</h2>
               <p
                 className="text-sm md:text-base text-slate-700"
                 dangerouslySetInnerHTML={{ __html: details.summary }}
@@ -108,7 +108,7 @@ export default function RecipeDetailsPage() {
             </section>
           )}
 
-          <div className="flex flex-wrap gap-4 text-sm text-slate-500">
+          <div className="flex flex-wrap text-sm text-slate-500">
             <span>{details.vegetarian ? " Vegetarian" : ""}</span>
             <span>{details.vegan ? " Vegan" : ""}</span>
             <span>{details.glutenFree ? " Gluten Free" : ""}</span>

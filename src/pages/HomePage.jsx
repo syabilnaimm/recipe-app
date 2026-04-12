@@ -42,7 +42,7 @@ export default function HomePage() {
         id="top"
         className="mb-8 rounded-[2rem] bg-white/80 p-8 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-2">Smart Recipe Finder</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 my-2">Smart Recipe Finder</h1>
         <p className="text-slate-600 max-w-2xl">
           Find tasty meals with ingredient-based search, then follow clean step-by-step recipes on a
           dedicated page.
